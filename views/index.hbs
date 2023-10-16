@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="utf-8" />
-    <title>Gambling v2.0</title>
-</head>
-<body>
-{{ message }}
-</body>
-</html>
+{{#unless showButton}}
+    <a  href="/login">Log in</a>
+{{/unless}}
+<table border="1" width="40%", align="center" >
+    <thead>
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Cash</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each players}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.surname}}</td>
+            <td>{{this.cash}}</td>
+            {{#if ../showButton}}
+                <td><button onclick="window.location = './change?id={{this.id}}'"  class = "moneybtn">+</button></td>
+            {{/if}}
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
