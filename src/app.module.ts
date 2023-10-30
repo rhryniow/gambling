@@ -11,9 +11,9 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
+      type: 'mariadb',
+      host: '10.0.0.10',
+      port: 3307,
       username: 'root',
       password: '9miliardow',
       database: 'gambling',
